@@ -1,0 +1,49 @@
+<div ng-controller="intProjectTimeEntryController">
+    <div>
+        <button ng-click="addTask()">Add Task</button>
+        <button ng-click="saveTasks()">Save</button>
+    </div>
+    <br>
+    <div class="projectTimeEntry projectTimeEntryHeader">
+        <div class="boxes">
+            Task Type
+        </div>
+        <div class="boxes">
+            Date
+        </div>
+        <div class="boxes">
+            Hours
+        </div>
+        <div class="boxes">
+            Description
+        </div>
+        <div class="boxes">
+            Action
+        </div>
+    </div>
+     <br>
+    <div class="projectTimeEntry" ng-repeat="task in userTasks">
+        <div class="boxes">
+            <!-- <select id="taskType" ng-model="userTaskType[$index]" ng-options="task.name for task in taskTypes">
+            </select> -->
+            <select id="taskType" ng-model="task.taskType" ng-options="task.id as task.name for task in taskTypes">
+            </select>
+        </div>
+        <div class="boxes">
+            <!-- <input type="date" ng-model="userDate[$index]"> -->
+            <input type="date" ng-model="task.taskDate">
+        </div>
+        <div class="boxes">
+            <!-- <input id="taskHours" ng-model="userTaskHours[$index]" type="number" min="0"> -->
+            <input id="taskHours" ng-model="task.taskHours" type="number" min="0">
+        </div>
+        <div class="boxes">
+            <!-- <input id="taskDescription" ng-model="userDescription[$index]" type="text"> -->
+            <input id="taskDescription" ng-model="task.taskDescription" type="text">
+        </div>
+        <div class="boxes">
+            <button ng-click="removeTask($index);">Remove</button>
+        </div>
+    </div>
+    <br>
+</div>

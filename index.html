@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" ng-app="HealthyHomes">
+<head>
+    <meta charset="utf-8">
+    <title>Healthy Homes Questions</title>
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body ng-init="$window.$root = this">
+<div class="hh-header" ng-include src="partial/header.html"></div>
+
+<div class="hh-menu" ng-include src="partial/menu.html"></div>
+
+<div class="hh-content" ng-view></div>
+
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+  <head>
+    <title>AngularJS Form</title>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/modules/promise-tracker.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  </head>
+  <body class="container">
+  
+  <h2>AngularJs form</h2>
+
+  <p>This is an AngularJs based form. It uses a controller to handle form validation and submission.</p>
+  <p>Find a step by step tutorial on this form at <a href="https://www.lullabot.com/blog/article/processing-forms-angularjs">the Lullabot Blog</a>.</p>
+  <a href="https://github.com/juampy72/angularjs_form"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+  <div data-ng-controller="help">
+    <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+    <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+    <form name="helpForm" novalidate role="form">
+      <div class="form-group">
+        <label for="name">Your Name </label>
+        <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
+        <input type="text" name="name" data-ng-model="name" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your E-mail address</label>
+        <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
+        <span class="label label-danger" data-ng-show="submitted && helpForm.$error.email">Invalid email!</span>
+        <input type="email" name="email" data-ng-model="email" class="form-control" required />  
+      </div>
+
+      <div class="form-group">
+        <label for="subjectList">What is the nature of your request?</label>
+        <span class="label label-danger" data-ng-show="submitted && helpForm.subjectList.$error.required">Required!</span>
+        <select name="subjectList" data-ng-model="subjectList" data-ng-options="id as value for (id, value) in subjectListOptions" class="form-control" required>
+          <option value=""></option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="url">URL of Relevant Page</label>
+        <span class="label label-danger" data-ng-show="submitted && helpForm.$error.url">Invalid URL format!</span>
+        <input type="url" name="url" data-ng-model="url" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Description</label>
+        <span class="label label-danger" data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
+        <textarea name="comments" data-ng-model="comments" class="form-control" required></textarea>
+      </div>
+
+      <button data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+
+  </body>
+</html>-->

@@ -1,0 +1,31 @@
+<div>
+    <table border="0">
+        <tr>
+            <td>Project:</td>
+            <td><input ng-disabled="viewMode" type="text" ng-model="project.name" ng-readonly="true"></td>
+        <tr>
+            <td>Client:</td>
+            <td><input ng-disabled="viewMode" type="text" ng-model="project.client" ng-readonly="true"></td>
+        </tr>
+        <tr>
+            <td>Hours declared:</td>
+            <td><input ng-disabled="viewMode" type="text" ng-model="project.totalHours" ng-readonly="true"></td>
+        </tr>
+        <tr>
+            <td>Achievements:</td>
+            <td><input ng-disabled="viewMode" type="text" ng-model="Achievements"></td>
+        </tr>
+        <tr>
+            <td>Risks and Issues:</td>
+            <td><input ng-disabled="viewMode" type="text" ng-model="RisksIssues"></td>
+        </tr>
+        <tr>
+            <td>Comments and Action Items:</td>
+            <td><input ng-disabled="viewMode" type="text" ng-model="CommentsAction" required></td>
+        </tr>
+    </table>
+    <br/>
+    <div ng-controller="TasksController" type="regularTasks">
+        <tasks></tasks>
+    </div>
+</div>

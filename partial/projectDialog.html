@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+    <script src="http://code.angularjs.org/1.2.6/angular.min.js"></script>
+    <script src="../lib/angular/ui-bootstrap.js"></script>
+    <link href="../css/app.css" rel="stylesheet">
+
+</head>
+<div ng-controller="ProjectPickerController" class="modal-header">
+    <h3>{{dialogTitle}} Project</h3>
+</div>
+<div class="modal-body">
+    <form>
+        <table>
+            <tr>
+                <td class="tdLabel">Name:</td>
+                <td><input type="text" ng-model="project.name" required></td>
+                <td class="tdLabel">Industry:</td>
+                <td><input type="text" ng-model="project.industry" required></td>
+            </tr>
+            <tr>
+                <td class="tdLabel">Start Date:</td>
+                <td><input type="date" ng-model="project.startDate" required></td>
+                <td class="tdLabel">Work Fax:</td>
+                <td><input type="text" ng-model="project.workFax" required></td>
+            </tr>
+            <tr>
+                <td class="tdLabel">End Date:</td>
+                <td><input type="date" ng-model="project.endDate" required></td>
+                <td class="tdLabel">Work Manager Phone:</td>
+                <td><input type="text" ng-model="project.workMngPhone" required></td>
+            </tr>
+            <tr>
+                <td class="tdLabel">Work Phone:</td>
+                <td><input type="tel" ng-model="project.workPhone"></td>
+            </tr>
+            <tr>
+                <td class="tdLabel">Work Email:</td>
+                <td><input type="tel" ng-model="project.workEmail"></td>
+            </tr>
+            <tr>
+                <td class="tdLabel">Project description:</td>
+                <td><textarea ng-model="project.description"></textarea></td>
+            </tr>
+            <tr>
+                <td class="tdLabel">Role & Responsabilities:</td>
+                <td><textarea ng-model="project.roles"></textarea></td>
+            </tr>
+            <tr>
+                <td class="tdLabel">Technologies Used:</td>
+                <td><textarea ng-model="project.technologies"></textarea></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="modal-footer">
+    <button ng-click="saveProject(project)">Save</button>
+    <button ng-click="cancelProject()">Cancel</button>
+    <button ng-click="removeProject(project, $event)" ng-show="isEdit()" >Delete</button>
+</div>
+</body>
+</html>

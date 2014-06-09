@@ -1,0 +1,40 @@
+<div class="page-summary" ng-controller="PageSummaryController">
+    <table>
+        <thead>
+        <th width="3%">
+            <input type="checkbox" style="vertical-align: top" />
+        </th>
+        <th width="10%">Actions</th>
+        <th width="15%">Starts</th>
+        <th width="15%">Ends</th>
+        <th width="10%">Status</th>
+        <th width="10%">Total Hours</th>
+        <th width="15%">Projects</th>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="sheet in timesheets">
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" ng-click="viewTimeSheet(sheet)">View</button>
+                <button type="button" class="btn btn-primary" ng-click="editTimeSheet(sheet)">Edit</button>
+            </td>
+            <td>
+                <span>{{ sheet.start | startOfWeek | date:'dd - MMM - yyyy' }}</span>
+            </td>
+            <td>
+                <span>{{ sheet.end | endOfWeek | date:'dd - MMM - yyyy' }}</span>
+            </td>
+            <td>{{ sheet.status }}</td>
+            <td>
+                <span>{{ getTotalHours(sheet) }}</span>
+            </td>
+            <td>
+                <span ng-repeat="project in getRelatedProjects(sheet)"> {{ project.name }}{{$last ? '' : ', '}} </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

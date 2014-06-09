@@ -1,0 +1,62 @@
+<div>
+    <script type="text/ng-template" id="projectSelector.html">
+        <div class="modal-header">
+            <h3>Select Project</h3>
+        </div>
+        <div class="modal-body">
+            <select ng-change="change(selectedPrj)" ng-model="selectedPrj"
+                    ng-options="project as project.name for project in projects"></select>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button class="btn btn-primary" type="button" ng-click="removeItem(task.id)">Save</button>
+    <button class="btn btn-primary" type="button" ng-click="removeItem(task.id)">Submit!</button>
+    <button class="btn btn-primary" type="button" ng-click="removeItem(task.id)">Cancel</button>
+    <span class="int-timesheetDetails">
+        <table border="0">
+            <tr>
+                <td><b>Timesheet Period: </b></td>
+                <td width="50%">{{timesheet.startDate | date:'dd-MM-yyyy'}}<b> to </b>{{timesheet.endDate |
+                    date:'dd-MM-yyyy'}}
+                </td>
+            </tr>
+            <tr>
+                <td><b>Timesheet Status: </b></td>
+                <td>{{timesheet.status}}</td>
+            </tr>
+            <tr>
+                <td><b>Total hours declared: </b></td>
+                <td>{{timesheet.totalTimeSheetHours}}</td>
+            </tr>
+        </table>
+    </span>
+    <br/><br/>
+    <tabset>
+        <tab active="timeOffActive">
+            <tab-heading>
+                <div style="color:orangered">Time Off</div>
+            </tab-heading>
+            <div ng-controller="TasksController" type="timeoffTasks">
+                <tasks></tasks>
+            </div>
+        </tab>
+        <tab ng-repeat="prj in timesheet.timesheetProjects" active=prj.active>
+            <tab-heading>
+                <div style="color:green">{{prj.name}} <a ng-click="removeTab(prj.id)" href=''><i
+                        class="icon-remove"></i></a></div>
+            </tab-heading>
+            <div ng-controller="ProjectTimesheetController">
+                <projecttimesheet></projecttimesheet>
+            </div>
+        </tab>
+        <tab disabled="viewMode" select="addProject()">
+            <tab-heading>
+                <div style="color:black"><i class="icon-plus-sign"></i> Add Project</div>
+            </tab-heading>
+        </tab>
+    </tabset>
+</div>

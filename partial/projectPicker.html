@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="conrep">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+    <script src="../js/projectPicker.js"></script>
+    <script src="../lib/angular/ui-bootstrap.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="ProjectPickerController">
+
+    <div class="modal-header">
+        <h3>Project Picker</h3>
+        <select ng-options="item.name for item in options" ng-model="selectedOption">
+            <option value="">--Select Project--</option>
+        </select>
+        <button id="addButton" ng-click="showAddEditProject('Add')">Add</button>
+        <button id="editButton" ng-click="showAddEditProject('Edit')" ng-show="selectedOption != null || selectedOption != undefined">Edit</button>
+    </div>
+ </div>
+</body>
+</html>

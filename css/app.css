@@ -1,0 +1,121 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+body {
+    padding: 10px 20px;
+}
+
+.hh-header {
+
+}
+
+.hh-forms {
+    
+}
+
+.hh-login {
+    float: right;
+}
+
+.hh-logo {
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.hh-login span {
+    padding: 0 10px;
+    border-right: 1px solid black;
+}
+
+.hh-login span:last-child {
+    border: 0;
+    padding-right: 0;
+}
+
+
+.hh-menu {
+    margin: 10px 0;
+}
+
+.hh-menu .hh-menu-item {
+    margin-right: 15px;
+}
+
+.hh-menu-item a, .hh-menu-item a:hover, .hh-menu-item a:visited, .hh-menu-item a:active, .hh-login span  {
+    text-decoration: none;
+    color: #5e5e5e;
+    cursor: pointer;
+}
+
+.hh-menu .hh-menu-item a:hover, .hh-login span:hover {
+    color: #2e2e2e;
+}
+
+.hh-content {
+    margin: 20px 0;
+}
+
+.hh-greeting {
+    margin: 10px 0;
+}
+
+.hh-timesheetDetails {
+    float: right;
+}
+
+.page-summary {
+
+}
+
+.page-summary > table {
+    border-collapse: collapse;
+}
+
+.page-summary > table th, .page-summary > table td {
+    text-align: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    vertical-align: top;
+}
+
+
+
+/* */
+.projectTimeEntryHeader{
+    background-color: blue;
+    color: white;
+}
+.projectTimeEntry{
+    width: 830px;
+    height: 20px;
+}
+.boxes{
+    float: left;
+    width: 165px;
+    height: 30px;
+}
+/* */
+
+
+
+/* Behavioral */
+.hh-active, .hh-menu-item a.hh-active {
+    color: #2e2e2e;
+    text-decoration: underline;
+}
+
+.tdLabel {
+    padding: 7px 10px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.modal.projectDialog{
+    width:800px;
+    height: 500px;
+    margin-left:-400px
+}
